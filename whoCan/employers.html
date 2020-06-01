@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>WhoCan | Employers Page</title>
+     <link rel="stylesheet" href="styles\main.css">
+     <link rel="stylesheet" href="styles\jobseekers\jobseekers.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+     <header class="header">
+          <div class="logo-container">
+               <a href="homepage.html"><img src="img\logo.png" alt="WhoCan logo"></a>
+          </div>
+
+          <div class="menu-container">
+               <!-- <div class="user-actions">
+                    <button class="primary-btn sign-up-btn btn">Sign Up</button>
+                    <button class="secondary-btn log-in-btn btn">Log In</button>
+               </div> -->
+               <div class="menu-icon-container">
+                    <div class="menu-icon"></div>
+               </div>
+          </div>
+     </header>
+     <div class="menu">
+          <nav class="nav-menu">
+               <ul>
+                    <li><a href="#">CATAGORIES</a></li>
+                    <li><a href="#">NOTIFICATIONS</a></li>
+                    <li><a href="#">RECENT WORK</a></li>
+                    <li><a href="#">HOW IT WORKS</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT</a></li>
+               </ul>
+          </nav>
+     </div>
+     <div class="info-bar">
+          <div class="profile"></div>
+          <nav class="profile-nav">
+               <ul>
+                    <li>
+                         <a href="#">CATAGORIES</a>
+                    </li>
+                    <li>
+                         <a href="#">RECENT WORK</a>
+                    </li>
+                    <li>
+                         <a href="#">DOWNLOAD THE APP</a>
+                    </li>
+                    <li>
+                         <a href="#">RECENT WORK</a>
+                    </li>
+               </ul>
+          </nav>
+     </div>
+     <div class="preview-section">
+          <div class="preview-section__content-container">
+               <div class="preview-section__content-container--preview">
+               </div>
+          </div>
+     </div>
+     <div class="job-listings-section">
+          <h2>JOB LISTINGS</h2>
+          <div class="job-listings__content-container"></div>
+     </div>
+     <div class="post-section">
+          <div class="post-section__container">
+               <form class="post-listing-form">
+                    <h4>New Job Listing</h4>
+                    <div class="row">
+                         <div class="column">
+                              <label for="name">Title</label>
+                              <select name="catergories" id="">
+                                   <option value="Domestic work">Grass Cutter</option>
+                                   <option value="Domestic work">Deep Clearner</option>
+                                   <option value="Electronics">Painter</option>
+                                   <option value="Beauty and Hair">Hair Stylist</option>
+                                   <option value="Interior Design">Make up Artist</option>
+                                   <option value="Extra Classes">Plumber</option>
+                                   <option value="Extra Classes">Wood worker</option>
+                              </select>
+                         </div>
+                         <div class="column">
+                              <label for="surname">Location</label>
+                              <select name="catergories" id="">
+                                   <option value="Domestic work">Makhaza/Khayelitsha</option>
+                                   <option value="Domestic work">Site b/Khayelitsha</option>
+                                   <option value="Electronics">Towntwo/Khayelitsha</option>
+                                   <option value="Beauty and Hair">Harare/Khayelitsha</option>
+                                   <option value="Interior Design">Makhaya/Khayelitsha</option>
+                                   <option value="Extra Classes">Site c/Khayelitsha</option>
+                                   <option value="Extra Classes">E Section/Khayelitsha</option>
+                              </select>
+                              
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="column">
+                              <label for="email">Job description</label>
+                              <input type="email" name="email" id="description">
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="column">
+                              <label for="catergory">Catergory</label>
+                              <select name="catergories" id="">
+                                   <option value="Domestic work">Domestic Work</option>
+                                   <option value="Electronics">Electronics</option>
+                                   <option value="Beauty and Hair">Beauty and Hair</option>
+                                   <option value="Interior Design">Interior Design</option>
+                                   <option value="Extra Classes">Extra Classes</option>
+                              </select>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="column">
+                              <label for="surname">Price</label>
+                              <input type="text" name="surname" id="">
+                         </div>
+                    </div>
+                    <div class="row">
+                         <img src="img/pin.png" alt="pin icon">
+                         <span>Upload A picture of what you want done</span>
+                    </div>
+                    <button type="submit" class="secondary-btn btn submit-btn">POST</button>
+               </form>
+          </div>
+     </div>
+     <div class="fab">
+          <span>+</span>
+          <ul>
+               <li class="post"><img src="img\post-icon.png" alt="post icon"> Post</li>
+               <li class="profile-edit"><img src="img\profile-icon.png" alt="profile icon"> Profile</li>
+          </ul>
+     </div>
+
+     <script src="scripts\utilities.js"></script>
+     <script src="scripts\jobseekers.js"></script>
+</body>
+
+</html>

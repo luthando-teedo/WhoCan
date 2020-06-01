@@ -1,0 +1,384 @@
+// VARIABLES
+$color-green: #00dca8;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: #777777;
+$color-off-white: #f1f1f1;
+$color-dark-grey: #333333;
+
+// EXTENTIONS
+%space-between {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+%center {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+*,
+*::before,
+*::after {
+     margin: 0;
+     padding: 0;
+     outline: none;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: Roboto, sans-serif;
+
+     .container {
+          width: 80%;
+          margin: 0 auto;
+          max-width: 1200px;
+     }
+
+     .btn {
+          border: none;
+          padding: 10px;
+          border-radius: 3px;
+          transition: all .5s ease;
+          text-transform: uppercase;
+     }
+
+     .primary-btn {
+          color: $color-white;
+          background-color: $color-green;
+          border: 1px solid $color-green;
+
+          &:hover {
+               color: $color-green;
+               border: 1px solid $color-green;
+               background-color: $color-white;
+          }
+     }
+
+     .secondary-btn {
+          color: $color-green;
+          border: 1px solid $color-green;
+          background-color: $color-white;
+
+          &:hover {
+               color: $color-white;
+               border: 1px solid $color-white;
+               background-color: $color-green;
+          }
+     }
+
+     ul {
+          li {
+               list-style: none;
+          }
+     }
+
+     a {
+          color: $color-black;
+          text-decoration: none;
+     }
+}
+
+.header {
+     top: 0;
+     z-index: 99;
+     width: 100%;
+     height: 70px;
+     padding: 0 50px;
+     position: fixed;
+     @extend %space-between;
+     background-color: $color-white;
+     box-shadow: 4px 4px 4px rgba(0, 0, 0, .15);
+
+     .logo-container {
+          width: 100px;
+
+          img {
+               width: 100%;
+          }
+     }
+
+     .menu-container {
+          display: flex;
+
+          .user-actions {
+               @extend %space-between;
+
+               .log-in-btn {
+                    margin-left: 10px;
+                    color: $color-white;
+                    background-color: $color-green;
+                    border: 1px solid $color-green;
+
+                    &:hover {
+                         color: $color-green;
+                         border: 1px solid $color-green;
+                         background-color: $color-white;
+                    }
+               }
+
+               .sign-up-btn {
+                    color: $color-green;
+                    border: 1px solid $color-green;
+                    background-color: $color-white;
+
+                    &:hover {
+                         color: $color-white;
+                         border: 1px solid $color-white;
+                         background-color: $color-green;
+                    }
+               }
+          }
+
+          .menu-icon-container {
+               width: 35px;
+               height: 35px;
+               @extend %center;
+               cursor: pointer;
+               margin-left: 10px;
+
+               @media (min-width: 600px) {
+                    margin-left: 50px;
+
+               }
+
+               .menu-icon {
+                    width: 100%;
+                    height: 2px;
+                    position: relative;
+                    transition: all .5s ease;
+                    background-color: $color-green;
+
+                    &::before,
+                    &::after {
+                         left: 0;
+                         content: '';
+                         width: 100%;
+                         height: 100%;
+                         position: absolute;
+                         transition: all .5s ease;
+                         background-color: $color-green;
+                    }
+
+                    &::before {
+                         top: -5px;
+                    }
+
+                    &::after {
+                         bottom: -5px;
+                    }
+               }
+
+               &.active {
+                    .menu-icon {
+                         background-color: $color-white;
+
+                         &::before {
+                              top: 0;
+                              transform: rotate(45deg)
+                         }
+
+                         &::after {
+                              bottom: 0;
+                              transform: rotate(135deg);
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.menu {
+     left: 0;
+     z-index: 9;
+     top: -200px;
+     width: 100%;
+     height: 200px;
+     position: fixed;
+     padding: 25px 50px;
+     transition: all .5s ease;
+     background-color: $color-white;
+     box-shadow: 4px 4px 4px rgba(0, 0, 0, .15);
+
+     &.active {
+          top: 70px;
+     }
+
+     .nav-menu {
+
+          li {
+               &:not(:last-child) {
+                    margin-bottom: 10px;
+               }
+
+               a {
+                    font-weight: bold;
+                    color: $color-grey;
+                    transition: all .5s ease;
+
+                    &:hover {
+                         color: $color-green;
+                    }
+               }
+          }
+     }
+}
+
+.fab {
+     width: 50px;
+     right: 25px;
+     bottom: 25px;
+     height: 50px;
+     position: fixed;
+     cursor: pointer;
+     border-radius: 50%;
+     background: #e33d51;
+     box-shadow: 0 5px 5px rgba($color-black, .3);
+
+     &.active {
+          span {
+               transform: rotate(45deg);
+          }
+
+          ul {
+               opacity: 1;
+               visibility: visible;
+               transition: all .5s ease;
+          }
+     }
+
+     span {
+          width: 100%;
+          height: 100%;
+          @extend %center;
+          font-size: 45px;
+          position: relative;
+          color: $color-white;
+          transition: all .5s ease;
+     }
+
+     ul {
+          opacity: 0;
+          width: 130px;
+          left: -90px;
+          bottom: 65px;
+          visibility: hidden;
+          border-radius: 5px;
+          position: absolute;
+          background: #e33d51;
+          transition: all .5s ease;
+
+          li {
+               display: flex;
+               padding: 0 10px;
+               align-items: center;
+               color: $color-white;
+
+               img {
+                    width: 40px;
+                    margin-right: 20px;
+               }
+
+          }
+
+     }
+}
+
+.preview-section {
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh;
+     position: fixed;
+     @extend %center;
+     padding-top: 100px;
+     padding-bottom: 50px;
+     background-color: #efefef77;
+     display: none;
+
+     .preview-section__content-container {
+          width: 90%;
+          height: 50%;
+          margin: 0 auto;
+          @extend %center;
+          padding: 20px 40px;
+
+          .preview-section__content-container--preview {
+               width: 100%;
+               height: 80vh;
+               padding: 10px;
+               flex-direction: column;
+               @extend %space-between;
+               background-color: #efefef;
+               border: 1px solid lightgray;
+
+               @media (min-width: 500px) {
+                    flex-direction: row;
+               }
+
+               .content-container--preview-image-container {
+                    width: 80%;
+                    height: 40%;
+
+                    @media (min-width: 500px) {
+                         height: 100%;
+                         margin-right: 10px;
+                    }
+
+                    img {
+                         width: 100%;
+                         height: 100%;
+                         margin: 0;
+                         margin-right: 10px;
+                    }
+               }
+
+               .content-container--preview-profile-container {
+                    padding: 30px;
+                    width: 100%;
+
+                    @media (min-width: 500px) {
+                         width: 70%;
+                         border-left: 2px solid #00dca8;
+                    }
+
+                    .personal-info {
+                         margin: 0;
+
+                         .personal-info-container {
+                              @extend %space-between;
+
+                              .personal-info {
+                                   margin-bottom: 20px;
+
+                                   h1 {
+                                        font-size: 15px;
+
+                                        @media (min-width: 500px) {
+                                             font-size: 35px;
+                                        }
+                                   }
+
+                              }
+                         }
+
+                         .rating-container {
+                              img {
+                                   width: 20px;
+                              }
+                         }
+
+                         .location {
+                              font-size: 15px;
+                         }
+
+                         p {
+                              width: 80%;
+                         }
+                    }
+               }
+          }
+     }
+}
