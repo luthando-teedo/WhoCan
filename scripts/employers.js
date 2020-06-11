@@ -1,10 +1,10 @@
-const previewSection = document.querySelector('.preview-section');
-employersSection = document.querySelector('.employers__content-container');
-previewSectionContentContainer = document.querySelector('.preview-section__content-container--preview')
-const profileEditBtn = document.querySelector('.profile-edit');
-const profileContainer = document.querySelector('.profile');
-const postBtn = document.querySelector('.post');
 const fab = document.querySelector('.fab');
+const postBtn = document.querySelector('.post');
+const profileContainer = document.querySelector('.profile');
+const profileEditBtn = document.querySelector('.profile-edit');
+const previewSection = document.querySelector('.preview-section');
+const employersSection = document.querySelector('.employers__content-container');
+const previewSectionContentContainer = document.querySelector('.preview-section__content-container--preview')
 
 
 
@@ -23,8 +23,14 @@ window.addEventListener('click', (e) => {
      console.log(target.className);
 
 
-     if (target.className == 'preview-section' || target.className == 'preview-section__content-container') {
+     if (target.className == 'preview-section' || target.className == 'preview-section__content-container' || target.className == 'testimonial-section') {
           previewSection.style = 'display: none';
+          document.querySelector('.testimonial-section').style = 'display: none';
+     }
+
+     //IF THE CLASSNAME OF WHATEVER WAS CLICKED ON IS EQUAL TO 'primary-btn btn testimonial-btn' THEN SHOW THE TESTIMONIALS 
+     if (target.className == 'primary-btn btn testimonial-btn') {
+          document.querySelector('.testimonial-section').style = 'display: flex';
      }
 })
 employersSection.addEventListener('click', e => {
@@ -38,6 +44,8 @@ employersSection.addEventListener('click', e => {
           let employer = getPersonById(employerId);
           renderPreview(employer);
      }
+
+
 })
 
 
@@ -75,6 +83,7 @@ function renderPeople() {
                                                        </div>
                                                        <p class="location">${person.location}</p>
                                                        <button id="${i}" class="primary-btn btn request">VIEW PROFILE</button>
+
                                                   </div>
                                              </div>
                                               `
@@ -142,6 +151,7 @@ function renderPreview(employer) {
                                                                       </div>
                                                                       
                                                                       <button class="request-btn primary-btn btn">WORK WITH ME</button>
+                                                                      <button class="primary-btn btn testimonial-btn">Testimonials</button>
                                                                  </div>				
                                                             </div>
                                                        </div>`

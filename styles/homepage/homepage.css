@@ -84,6 +84,22 @@ body a {
   text-decoration: none;
 }
 
+.btn2 {
+  background-color: #333;
+  color: white;
+  width: 230px;
+  margin-top: 10px;
+  border:none;
+  height: 35px;
+  border-radius: 3px;
+}
+
+.btn2:hover {
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+}
+
 .header {
   top: 0;
   z-index: 99;
@@ -393,7 +409,7 @@ body a {
 
 .hero-section {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   padding-top: 100px;
   background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, rgba(0, 220, 168, 0.1)), to(rgba(0, 220, 168, 0.9)));
   background: linear-gradient(to bottom right, rgba(0, 220, 168, 0.1) 50%, rgba(0, 220, 168, 0.9));
@@ -401,7 +417,7 @@ body a {
 
 @media (min-width: 600px) {
   .hero-section {
-    height: 70vh;
+    height: 100vh;
     background: #ffffff;
   }
 }
@@ -467,7 +483,6 @@ body a {
   padding: 50px 0;
   text-align: center;
   background: #f1f1f1;
-  height: 30vh;
 }
 
 @media (min-width: 600px) {
@@ -481,24 +496,13 @@ body a {
   font-size: 20px;
   font-weight: bold;
   color: #00dca8;
-  margin-left: 150px;
-  /*margin-bottom: -20px;*/
 }
 
 .app-advert .advert {
   width: 90%;
+  max-width: 500px;
   margin: 0 auto;
   max-width: 500px;
-  height: 50px;
-}
-
-.advert img {
-  width: 120px;
-  height: 120px;
-}
-
-.app-download-btn {
-  margin-left: 150px;
 }
 
 .modal-background {
@@ -507,7 +511,7 @@ body a {
   width: 100%;
   height: 100vh;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   display: none;
 }
 
@@ -583,15 +587,6 @@ body a {
   width: 80%;
 }
 
-.pin {
-  width: 20px;
-  height: 20px;
-}
-
-/*.attach-files-container {
-  margin-bottom: 10px;
-}*/
-
 .modal-background .jobseekers-catergories,
 .modal-background .employers-catergories {
   height: 200px;
@@ -607,6 +602,22 @@ body a {
           justify-content: center;
   background-color: rgba(0,0,0,.8);
 }
+
+/*.modal-background .jobseekers-catergories,
+.modal-background .employers-catergories {
+  height: 200px;
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #00dca8;
+}*/
 
 .modal-background .jobseekers-catergories .catergory,
 .modal-background .employers-catergories .catergory {

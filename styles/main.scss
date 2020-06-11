@@ -286,7 +286,8 @@ body {
      }
 }
 
-.preview-section {
+.preview-section,
+.testimonial-section {
      top: 0;
      left: 0;
      width: 100%;
@@ -297,6 +298,14 @@ body {
      padding-bottom: 50px;
      background-color: #efefef77;
      display: none;
+
+     .testimonial {
+          width: 700px;
+          height: 400px;
+          margin: 0 auto;
+          max-width: 80%;
+          background-color: lightgrey;
+     }
 
      .preview-section__content-container {
           width: 90%;
